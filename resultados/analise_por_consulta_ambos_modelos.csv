@@ -1,0 +1,469 @@
+query_id,texto_original,AP_Vetorial,P10_Vetorial,NDCG_Vetorial,AP_BM25,P10_BM25,NDCG_BM25,Diferenca_BM25_menos_Vetorial,Media_AP
+1,"what similarity laws must be obeyed when constructing aeroelastic models
+of heated high speed aircraft .",0.31533297699455304,0.6,0.5365078682328377,0.23388176552346168,0.4,0.3600040790944101,-0.08145121147109136,0.27460737125900736
+2,"what are the structural and aeroelastic problems associated with flight
+of high speed aircraft .",0.2207451662989329,0.4,0.6049211728888212,0.2154632210670113,0.4,0.5869866805081211,-0.005281945231921603,0.2181041936829721
+3,"what problems of heat conduction in composite slabs have been solved so
+far .",0.6873538011695908,0.7,0.7388864036938406,0.6708423520923521,0.7,0.7434060993872782,-0.01651144907723867,0.6790980766309714
+4,"can a criterion be developed to show empirically the validity of flow
+solutions for chemically reacting gas mixtures based on the simplifying
+assumption of instantaneous local chemical equilibrium .",0.5833333333333334,0.1,0.6131471927654584,0.5344827586206896,0.1,0.6131471927654584,-0.04885057471264376,0.5589080459770115
+5,"what chemical kinetic system is applicable to hypersonic aerodynamic
+problems .",0.2653801843317972,0.2,0.38048398765388947,0.41515151515151516,0.3,0.5882457875906547,0.14977133081971794,0.3402658497416562
+6,"what theoretical and experimental guides do we have as to turbulent
+couette flow behaviour .",0.15390406162464984,0.2,0.2896691203769041,0.1762945914844649,0.1,0.20607801570427584,0.022390529859815073,0.1650993265545574
+7,"is it possible to relate the available pressure distributions for an
+ogive forebody at zero angle of attack to the lower surface pressures of
+an equivalent ogive forebody at angle of attack .",0.1424829010194864,0.2,0.22922701555675037,0.17883547338540057,0.2,0.2724558813422326,0.03635257236591416,0.1606591872024435
+8,"what methods -dash exact or approximate -dash are presently available
+for predicting body pressures at angle of attack.",0.21872339002802924,0.2,0.28339660873566963,0.11971239777009396,0.1,0.16842717545221192,-0.09901099225793528,0.1692178938990616
+9,papers on internal /slip flow/ heat transfer studies .,1.0,0.3,1.0,0.9166666666666666,0.3,0.9674679834891694,-0.08333333333333337,0.9583333333333333
+10,"are real-gas transport properties for air available over a wide range of
+enthalpies and densities .",0.2028671048981307,0.1,0.209690670088435,0.150758153444285,0.1,0.1323000828051301,-0.0521089514538457,0.17681262917120785
+11,"is it possible to find an analytical,  similar solution of the strong
+blast wave problem in the newtonian approximation .",0.2604785417702038,0.3,0.25016498560190653,0.2296918105811981,0.2,0.21668217922435443,-0.030786731189005684,0.24508517617570097
+12,"how can the aerodynamic performance of channel flow ground effect
+machines be calculated .",0.17898143741075678,0.2,0.27731855011931333,0.27849129593810446,0.2,0.28785434950844296,0.09950985852734767,0.22873636667443062
+13,what is the basic mechanism of the transonic aileron buzz .,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+14,papers on shock-sound wave interaction .,0.5833333333333334,0.1,0.8637574337885663,0.5833333333333334,0.1,0.8637574337885663,0.0,0.5833333333333334
+15,material properties of photoelastic materials .,0.6666666666666666,0.2,0.6508780296742857,1.0,0.2,0.8597186998521972,0.33333333333333337,0.8333333333333333
+16,"can the transverse potential flow about a body of revolution be
+calculated efficiently by an electronic computer .",0.2019927536231884,0.1,0.23981246656813146,0.19877344877344874,0.1,0.23981246656813146,-0.003219304849739646,0.20038310119831856
+17,"can the three-dimensional problem of a transverse potential flow about
+a body of revolution be reduced to a two-dimensional problem .",0.5079365079365079,0.1,0.7039180890341347,0.10694444444444445,0.1,0.272312688806029,-0.40099206349206346,0.3074404761904762
+18,"are experimental pressure distributions on bodies of revolution at angle
+of attack available .",0.1343568747867622,0.1,0.23463936301137825,0.19550601556970984,0.1,0.2960819109658653,0.06114914078294764,0.16493144517823602
+19,"does there exist a good basic treatment of the dynamics of re-entry
+combining consideration of realistic effects with relative simplicity of
+results .",0.13366208770831645,0.1,0.29929892505139594,0.07681530021153814,0.1,0.18883659702687935,-0.05684678749677831,0.1052386939599273
+20,"has anyone formally determined the influence of joule heating,  produced
+by the induced current,  in magnetohydrodynamic free convection flows
+under general conditions .",0.5921771130104463,0.5,0.5287324048297514,0.5846034874490159,0.6,0.5966758057480421,-0.007573625561430375,0.588390300229731
+21,"why does the compressibility transformation fail to correlate the high
+speed data for helium and air .",0.2181684981684982,0.2,0.3432619894316359,0.07080275313583641,0.0,0.0,-0.1473657450326618,0.1444856256521673
+22,"did anyone else discover that the turbulent skin friction is not over
+sensitive to the nature of the variation of the viscosity with
+temperature .",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+23,what progress has been made in research on unsteady aerodynamics .,0.2637391091496799,0.5,0.3949887295247016,0.24256194971693104,0.5,0.3952495742814944,-0.021177159432748865,0.25315052943330546
+24,"what are the factors which influence the time required to invert large
+structural matrices .",0.4801587301587302,0.2,0.6904407032588902,0.3645833333333333,0.2,0.540460348067574,-0.11557539682539686,0.42237103174603174
+25,"does a practical flow follow the theoretical concepts for the
+interaction between adjacent blade rows of a supersonic cascade .",0.44791402720475737,0.4,0.47874737500743586,0.6901241123449106,0.6,0.7271751793430841,0.2422100851401532,0.569019069774834
+26,"what is a single approximate formula for the displacement thickness of
+a laminar boundary layer in compressible flow on a flat plate .",0.2643613242398409,0.3,0.43460856418739763,0.2381745825805046,0.2,0.3918360297400495,-0.026186741659336266,0.2512679534101727
+27,"how is the design of ring or part ring wings by linear theory affected
+by thickness .",0.06775599128540305,0.0,0.0,0.120415982484948,0.1,0.12669792223864473,0.05265999119954495,0.09408598688517553
+28,what application has the linear theory design of curved wings .,0.006643164040982703,0.0,0.0,0.005160256410256411,0.0,0.0,-0.0014829076307262927,0.005901710225619557
+29,"what is the effect of cross sectional shape on the flow over simple
+delta wings with sharp leading edges .",0.43771101526104556,0.4,0.4893490812110091,0.43631315243187396,0.4,0.5027196907974661,-0.0013978628291715922,0.43701208384645973
+30,papers on flow visualization on slender conical wings .,0.05120579000269491,0.0,0.0,0.07424948597503186,0.1,0.11020989177680433,0.023043695972336957,0.06272763798886338
+31,"what size of end plate can be safely used to simulate two-dimensional
+flow conditions over a bluff cylindrical body of finite aspect ratio .",0.0008880994671403197,0.0,0.0,0.0009149130832570906,0.0,0.0,2.6813616116770872e-05,0.0009015062751987052
+32,"to find an approximate correction for thickness in slender thin-wing
+theory .",0.12441381796220506,0.2,0.11666154845162628,0.13254820398578626,0.2,0.1291607334315776,0.0081343860235812,0.12848101097399567
+33,"how do interference-free longitudinal stability measurements (made
+using free-flight models) compare with similar measurements made in
+a low-blockage wind tunnel .",0.5888888888888889,0.3,0.6740190899733329,0.6388888888888888,0.3,0.6973180732318199,0.04999999999999993,0.6138888888888889
+34,"have wind tunnel interference effects been investigated on a systematic
+basis .",0.46279461279461276,0.4,0.4888678845006629,0.32804768331084116,0.3,0.3560639641845067,-0.1347469294837716,0.395421148052727
+35,"are there any papers dealing with acoustic wave propagation in reacting
+gases .",0.0423076923076923,0.0,0.0,0.03341013824884793,0.0,0.0,-0.008897554058844376,0.037858915278270115
+36,"has anyone investigated relaxation effects on gaseous heat transfer to a
+suddenly heated wall .",0.06447628458498024,0.1,0.1480409554829326,0.502375296912114,0.1,0.46927872602275644,0.4378990123271338,0.2834257907485471
+37,are there any theoretical methods for predicting base pressure .,0.18569803446637767,0.2,0.1823963936993017,0.0947992496607924,0.1,0.05937522820073476,-0.09089878480558528,0.14024864206358503
+38,does transition in the hypersonic wake depend on body geometry and size,0.0372796110273648,0.1,0.05199246247101202,0.04899378661617591,0.0,0.0,0.011714175588811111,0.04313669882177036
+39,how can one detect transition phenomena in boundary layers .,0.19190702891380507,0.2,0.31889901946620486,0.15488046860135307,0.2,0.245451881836334,-0.037026560312451995,0.17339374875757907
+40,how can one detect transition phenomena in hypersonic wakes .,0.06011000334380687,0.2,0.10837471265026907,0.10257212676188603,0.2,0.1393861786187838,0.04246212341807916,0.08134106505284644
+41,"has anyone investigated and developed a simple model for the vortex
+wake behind a cruciform wing .",0.7916666666666666,0.3,0.8916873528495691,0.8666666666666667,0.3,0.9272758027051587,0.07500000000000007,0.8291666666666666
+42,"what is a criterion that the transonic flow around an airfoil with a
+round leading edge be validly analyzed by the linearized transonic flow
+theory .",0.22326183326183324,0.3,0.3901096678197017,0.18834041625803638,0.3,0.3634706911650262,-0.03492141700379686,0.2058011247599348
+43,"can the transonic flow around an arbitrary smooth thin airfoil be
+analysed in a simple approximate way .",0.6241359447004607,0.5,0.7924811129254293,0.5584905339723327,0.4,0.7873362959749128,-0.06564541072812802,0.5913132393363967
+44,"what are the details of the rigorous kinetic theory of gases .
+(chapman-enskog theory) .",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+45,"has anyone investigated the effect of surface mass transfer on
+hypersonic viscous interactions .",0.23098888774786178,0.2,0.3602664366984503,0.2072463320436803,0.1,0.279901702223461,-0.02374255570418149,0.21911760989577103
+46,"what is the combined effect of surface heat and mass transfer on
+hypersonic flow .",0.2960661035811685,0.5,0.4189201073615318,0.3824062743107925,0.6,0.5966431453790035,0.08634017072962397,0.3392361889459805
+47,"what are the existing solutions for hypersonic viscous interactions over
+an insulated flat plate .",0.3587893811864755,0.5,0.3839002041016576,0.40463474488737294,0.6,0.440519172880186,0.045845363700897424,0.38171206303692423
+48,what controls leading-edge attachment at transonic speeds .,0.17975985994096144,0.3,0.3711219827663348,0.2065592842309828,0.3,0.39957899626793536,0.026799424290021356,0.19315957208597212
+49,"can the three-point boundary-value problem for the blasius equation
+be integrated numerically,  using suitable transformations,  without
+iteration on the boundary conditions .",0.14087301587301587,0.1,0.3273949503887395,0.13448275862068965,0.1,0.2940806813328203,-0.006390257252326226,0.13767788724685276
+50,"what are the effects of small amounts of gas rarefaction on the
+characteristics of the boundary layers on slender bodies of revolution .",0.06150863767500278,0.1,0.19676000841063562,0.10073756608528694,0.1,0.2882482022578178,0.039228928410284164,0.08112310188014486
+51,"what is the available information pertaining to boundary layers on very
+slender bodies of revolution in continuum flow (the ?transverse
+curvature  effect) .",0.48749442586399094,0.5,0.5306259502199117,0.504439100952423,0.6,0.4836973088156431,0.016944675088432004,0.49596676340820695
+52,"what is the available information pertaining to the effect of slight
+rarefaction on boundary layer flows (the ?slip? effect) .",0.7708333333333333,0.4,0.7123434578012986,0.5902777777777777,0.4,0.6339959090689976,-0.18055555555555558,0.6805555555555555
+53,"what investigations have been made of the flow field about a body moving
+through a rarefied,  partially ionized gas in the presence of a magnetic
+field .",0.2355085385021201,0.2,0.21964686745336068,0.27758485737832317,0.2,0.2130483765146811,0.042076318876203056,0.25654669794022167
+54,"how is the heat transfer downstream of the mass transfer region effected
+by mass transfer at the nose of a blunted cone .",0.09190215037152656,0.1,0.16868158409931971,0.1418398800726387,0.1,0.21285246057565374,0.04993772970111214,0.11687101522208262
+55,"to what extent can the available information for incompressible boundary
+layers be applied to problems involving compressible boundary layers .",0.36508836256215027,0.4,0.42883013600658065,0.3993635071289303,0.4,0.3417898878078204,0.03427514456678005,0.3822259348455403
+56,"to what extent can readily available steady-state aerodynamic data be
+utilized to predict lifting-surface flutter characteristics .",0.14575105849267908,0.2,0.15566983485303754,0.12880805153512911,0.2,0.15797981595069657,-0.016943006957549966,0.1372795550139041
+57,"what are the significant steady and non-steady flow characteristics
+which affect the flutter mechanism .",0.10054156189131094,0.2,0.23073671873905705,0.07887808940332416,0.1,0.18506716146503144,-0.02166347248798678,0.08970982564731755
+58,"is it possible to determine rates of forced convective heat transfer
+from heated cylinders of non-circular cross-section,  (the fluid flow
+being along the generators) .",0.23732056273107174,0.3,0.2178816431358735,0.154599856030062,0.1,0.12108270501347645,-0.08272070670100976,0.19596020938056685
+59,"how much is known about boundary layer flows along non-circular
+cylinders .",0.1915832455216017,0.1,0.20607801570427584,0.3105293828978039,0.1,0.32662592711430266,0.11894613737620222,0.2510563142097028
+60,"is there any simple,  but practical,  method for numerical integration
+of the mixing problem (i.e. the blasius problem with three-point
+boundary conditions) .",0.418716577540107,0.3,0.5170077121620826,0.36036281179138324,0.3,0.40567263115233965,-0.05835376574872375,0.3895396946657451
+61,"does there exist a closed-form expression for the local heat transfer
+around a yawed cylinder .",0.547047619047619,0.3,0.6851691024258786,0.5473304473304473,0.3,0.6294429748465851,0.00028282828282832906,0.5471890331890332
+62,"how far around a cylinder and under what conditions of flow,  if any,
+is the velocity just outside of the boundary layer a linear function of
+the distance around the cylinder .",0.054063227542173,0.1,0.06668920344096861,0.03368186062303709,0.0,0.0,-0.02038136691913591,0.04387254408260505
+63,where can i find pressure data on surfaces of swept cylinders .,0.036021733510869194,0.0,0.0,0.050262876743139895,0.0,0.0,0.0142411432322707,0.043142305127004545
+64,"can't the static deflection shapes be used in predicting flutter in
+place of vibrational shapes . if so,  can we provide a justification by
+means of an example .",0.6428571428571428,0.2,0.8484946226286495,0.5434782608695652,0.1,0.6787956981029196,-0.0993788819875776,0.593167701863354
+65,"does the boundary layer on a flat plate in a shear flow induce a
+pressure gradient .",0.3743928141358893,0.5,0.5631760916114558,0.2652404545946399,0.5,0.4319302016491222,-0.10915235954124941,0.31981663436526464
+66,"can the procedure of matching inner and outer solutions for a viscous
+flow problem be applied when the main stream is a shear flow .",0.18396367521367524,0.1,0.15416868446868615,0.10607601224949223,0.1,0.15416868446868615,-0.07788766296418301,0.14501984373158372
+67,"can series expansions be found for the boundary layer on a flat plate in
+a shear flow .",0.64476140213045,0.7,0.7500888152656768,0.5349469651105387,0.6,0.6667691030526519,-0.10981443701991123,0.5898541836204944
+68,"what possible techniques are available for computing the injection
+distribution corresponding to an isothermal transpiration cooled
+hemisphere .",0.061264589443593385,0.1,0.16827202841841413,0.06056543651851569,0.1,0.15494189208647555,-0.0006991529250776965,0.060915012981054534
+69,"what is known regarding asymptotic solutions to the exact boundary layer
+equations .",0.08652260904361744,0.0,0.0,0.042877217815755396,0.0,0.0,-0.04364539122786205,0.06469991342968642
+70,previous solutions to the boundary layer similarity equations .,0.10246168722002538,0.2,0.15747962362424628,0.09897889769313399,0.2,0.1375079324744767,-0.0034827895268913917,0.10072029245657968
+71,experimental results on hypersonic viscous interaction .,0.044125189272430414,0.0,0.0,0.04529576027420855,0.0,0.0,0.0011705710017781354,0.04471047477331948
+72,"what has been done about viscous interactions in relatively low reynolds
+number flows,  particularly at high mach numbers .",0.09000284391402806,0.2,0.1112781819893507,0.13721611411587287,0.2,0.31363830294644224,0.047213270201844806,0.11360947901495047
+73,"what role does the effect of chemical reaction (particularly when out of
+equilibrium) play in the similitude laws governing hypersonic flows over
+slender aerodynamic bodies .",0.3256078889668751,0.4,0.4423107813714198,0.36316265181361046,0.7,0.6551176893703071,0.03755476284673537,0.3443852703902428
+74,"how significant is the possible pressure of a dissociated free stream
+with respect to the realization of hypersonic simulation in high
+enthalpy wind tunnels .",0.1710105083088954,0.2,0.20887538481027712,0.154349871261636,0.1,0.13392643788248648,-0.016660637047259397,0.1626801897852657
+75,"do the discrepancies among current analyses of the vorticity effect
+on stagnation-point heat transfer result primarily from the
+differences in the viscosity-temperature law assumed .",0.22642600821900735,0.1,0.2899845889212568,0.03235643397012054,0.0,0.0,-0.19406957424888682,0.12939122109456394
+76,"how far can one trust the linear viscosity-temperature solution
+assumed in some of the analyses of hypersonic shock layer at low
+reynolds number .",0.3346471885854677,0.3,0.4729367842700166,0.20858745238718096,0.2,0.324779646301465,-0.12605973619828675,0.27161732048632437
+77,"how close is the comparison of the shock layer theory with existing
+experiments in the low reynolds number (merged-layer) regime .",0.5711309523809524,0.4,0.517154580251037,0.3863239830345093,0.3,0.39615383721310166,-0.18480696934644303,0.47872746770773084
+78,"has anyone explained the kink in the surge line of a multi-stage
+axial compressor .",0.8055555555555555,0.3,0.8156868628654561,0.7555555555555555,0.3,0.8122044324192951,-0.04999999999999993,0.7805555555555554
+79,"have any aerodynamic derivatives been measured at hypersonic mach
+numbers and comparison been made with theoretical work .",0.06732930585169392,0.1,0.12624602730590243,0.06089530668308076,0.0,0.0,-0.006433999168613154,0.06411230626738734
+80,"are methods of measuring aerodynamic derivatives available which
+could be adopted for use in short running time facilities .",0.0658763111888112,0.0,0.0,0.01709273788896628,0.0,0.0,-0.048783573299844916,0.041484524538888734
+81,"what are wind-tunnel corrections for a two-dimensional aerofoil
+mounted off-centre in a tunnel .",0.45,0.2,0.4703895542422443,0.75,0.2,0.5879394370415081,0.3,0.6
+82,"how do kuchemann's and multhopp's methods for calculating lift
+distributions on swept wings in subsonic flow compare with each other and with
+experiment .",0.45509560417898676,0.3,0.6068960965452157,0.28290321736171103,0.3,0.4546343035603415,-0.17219238681727572,0.3689994107703489
+83,what is the present state of the theory of quasi-conical flows .,0.10009382586809809,0.1,0.16812753627111748,0.10496363987021533,0.1,0.16812753627111748,0.004869814002117237,0.1025287328691567
+84,"references on the methods available for accurately estimating
+aerodynamic heat transfer to conical bodies for both laminar and turbulent
+flow .",0.31176780608621096,0.4,0.35043959090844345,0.4315948699540051,0.4,0.38553053452440805,0.11982706386779413,0.37168133802010805
+85,"what parameters can seriously influence natural transition
+from laminar to turbulent flow on a model in a wind tunnel .",0.01988578330904156,0.0,0.0,0.26279995578062715,0.1,0.2579266542703838,0.2429141724715856,0.14134286954483435
+86,"can a satisfactory experimental technique be developed for measuring
+oscillatory derivatives on slender sting-mounted models in supersonic
+wind tunnels .",0.75,0.2,0.8772153153380493,0.5833333333333333,0.2,0.6934264036172708,-0.16666666666666674,0.6666666666666666
+87,"what effect has the boundary layer in modifying the basic inviscid flow
+behind the shock,  neglecting effects of leading edge and corner .",0.012973296563096318,0.0,0.0,0.011400327053261538,0.0,0.0,-0.0015729695098347807,0.012186811808178929
+88,"how does a satellite orbit contract under the action of air drag in
+an atmosphere in which the scale height varies with altitude .",0.7996031746031745,0.6,0.9380818475178836,0.6496031746031746,0.6,0.7280606648311084,-0.1499999999999999,0.7246031746031746
+89,"how is the flow at transonic speeds about a delta wing different
+from that on a closely-related tapered sweptback wing .",0.20664365832614326,0.2,0.2670127948487184,0.22389683959451404,0.2,0.3217572077985345,0.017253181268370776,0.21527024896032865
+90,recent data on shock-induced boundary-layer separation .,0.2760317614346271,0.5,0.36043030629693196,0.20003036320807097,0.3,0.18132022134674636,-0.07600139822655613,0.23803106232134902
+91,what interference effects are likely at transonic speeds .,0.3526923277627751,0.4,0.4559977146270124,0.4559797966383242,0.5,0.6477727225341792,0.10328746887554913,0.40433606220054963
+92,"given complete freedom in the design of an airplane,  what procedure
+would be used in order to minimize sonic boom intensity,  and is there a
+limit to the degree of minimizing that can be accomplished .",0.5208791733889478,0.6,0.4028925513955535,0.508381098071117,0.6,0.36529776121957863,-0.01249807531783087,0.5146301357300325
+93,"can methane-air combustion product be used as a hypersonic test
+medium and predict, within experimental accuracies, the results
+obtained in air .",0.5,0.1,0.6309297535714575,0.5,0.1,0.6309297535714575,0.0,0.5
+94,"what is the theoretical heat transfer rate at the stagnation point of a
+blunt body .",0.6205423153555871,0.6,0.572649124546192,0.591919742535251,0.6,0.5605113814718418,-0.02862257282033609,0.6062310289454191
+95,what is the theoretical heat transfer distribution around a hemisphere .,0.75,0.2,0.5879394370415081,0.45,0.2,0.4703895542422443,-0.3,0.6
+96,"has anyone investigated the unsteady lift distributions on finite
+wings in subsonic flow .",0.33648247647132357,0.5,0.3639777288880991,0.45653138934687204,0.7,0.5315890359440729,0.12004891287554847,0.3965069329090978
+97,"what information is available for dynamic response of airplanes to
+gusts  or blasts in the subsonic regime .",0.10118040815972193,0.2,0.1425971101458859,0.18791412053326031,0.3,0.2889326477995364,0.08673371237353839,0.14454726434649112
+98,"will forward or apex located controls be effective at low subsonic
+speeds and how do they compare with conventional trailing-edge
+flaps .",0.019661799387826785,0.0,0.0,0.02739172390608575,0.0,0.0,0.007729924518258966,0.023526761646956267
+99,"given that an uncontrolled vehicle will tumble as it enters an
+atmosphere, is it possible to predict when and how it will stop
+tumbling and its subsequent motion .",0.2583333333333333,0.2,0.43845845361268365,0.271875,0.2,0.4520703757857374,0.013541666666666674,0.26510416666666664
+100,"what are the effects of initial imperfections on the elastic buckling of
+cylindrical shells under axial compression .",0.20330091480326462,0.2,0.30646854645034693,0.2202452625925339,0.3,0.3586906388610686,0.016944347789269287,0.21177308869789926
+101,"why does the incremental theory and the deformation theory of plastic
+stress-strain relationship differ greatly when applied to stability
+problems .",0.8555555555555555,0.5,0.8065949812509472,0.811204481792717,0.5,0.8541286347110959,-0.04435107376283853,0.8333800186741362
+102,basic dynamic characteristics of structures continuous over many spans .,0.5315920398009951,0.2,0.6177019359714346,0.4356303418803419,0.3,0.5968790579421086,-0.09596169792065323,0.4836111908406685
+103,is the information on the buckling of sandwich sphere available .,0.02631578947368421,0.0,0.0,0.03333333333333333,0.0,0.0,0.007017543859649124,0.02982456140350877
+104,"can the load deformation characteristics of a beam be obtained with the
+material being inelastic and a non uniform temperature being present .",0.07240871956023529,0.0,0.0,0.1693533964216069,0.1,0.21398626473452756,0.09694467686137162,0.1208810579909211
+105,"what is the effect of an internal liquid column on the breathing
+vibrations of a cylindrical shell .",0.5546757164404224,0.3,0.7422329748991158,0.5580645161290323,0.3,0.7422329748991158,0.0033887996886099447,0.5563701162847273
+106,experimental techniques in shell vibration .,0.3448026315789473,0.2,0.5571041560743527,0.4571633531461365,0.3,0.6739728796273322,0.11236072156718918,0.40098299236254187
+107,"in summarizing theoretical and experimental work on the behaviour of a
+typical aircraft structure in a noise environment is it possible to
+develop a design procedure .",0.31361190289761715,0.3,0.38614459193818257,0.35205193120174033,0.4,0.4198600235980826,0.038440028304123186,0.33283191704967874
+108,what data is there on the fatigue of structures under acoustic loading .,0.7364778079063792,0.5,0.6900217206383465,0.8061533704390846,0.5,0.751755835313366,0.06967556253270546,0.7713155891727319
+109,panels subjected to aerodynamic heating .,0.034990061526794125,0.0,0.0,0.0397064733191974,0.0,0.0,0.004716411792403272,0.03734826742299576
+110,"can increasing the edge loading of a plate beyond the critical value for
+buckling change the buckling mode .",0.35086206896551725,0.2,0.6482276696408044,0.2822620623874396,0.1,0.5028666180369032,-0.06860000657807763,0.31656206567647843
+111,"have the effects of an elastic edge restraint been considered in
+previous papers on panel flutter .",0.3002860235003092,0.3,0.26304167967009107,0.32798171900339085,0.3,0.26267009189595986,0.027695695503081652,0.31413387125185
+112,"has the solution of the clamped plate problem,  in the classical theory
+of bending,  been reduced to two successive membrane boundary value
+problems .",0.28125,0.1,0.23981246656813146,0.3125,0.1,0.23981246656813146,0.03125,0.296875
+113,"what data exists on oscillatory aerodynamic forces on control surfaces
+at transonic mach numbers .",0.05892117716651879,0.0,0.0,0.14298985956993293,0.1,0.19519002499605084,0.08406868240341414,0.10095551836822586
+114,"it is not likely that the airforces on a wing of general planform
+oscillating in transonic flow can be determined by purely analytical
+methods . is it possible to determine the airforces on a single
+particular planform, such as the rectangular one by such method .",0.1046401889477429,0.1,0.22216592739310984,0.08795952353292127,0.1,0.22216592739310984,-0.01668066541482162,0.09629985624033208
+115,"is the problem of similarity for representative investigations of
+aeroelastic effects in heated flow as intractable as previous investigations
+imply .",0.012706524270710111,0.0,0.0,0.04875554530616665,0.1,0.16899301616355156,0.03604902103545654,0.03073103478843838
+116,"what is the magnitude and distribution of lift over the cone and the
+cylindrical portion of a cone-cylinder configuration .",0.07687161492421676,0.1,0.13315463217345028,0.060795423704157726,0.1,0.11469315735198049,-0.016076191220059037,0.06883351931418724
+117,"is there any information on how the addition of a /boat-tail/ affects
+the normal force on the body of various angles of incidence .",0.037241379310344824,0.0,0.0,0.03740562800274537,0.0,0.0,0.0001642486924005454,0.0373235036565451
+118,"what are the aerodynamic interference effects on the fin lift and body
+lift of a fin-body combination .",0.22016806722689075,0.1,0.3597186998521971,0.2246031746031746,0.2,0.39258655345796484,0.004435107376283859,0.22238562091503267
+119,"what is the effect of initial axisymmetric deviations from circularity
+on the non linear (large-deflection) load-deflection response of
+cylinders under hydrostatic pressure .",1.0,0.1,1.0,1.0,0.1,1.0,0.0,1.0
+120,"are previous analyses of circumferential thermal buckling of circular
+cylindrical shells unnecessarily involved or even inaccurate due to the
+assumed forms of buckling mode .",0.4790966443683037,0.5,0.55483789488311,0.46173339331234065,0.5,0.5067092988432153,-0.017363251055963036,0.47041501884032216
+121,"what papers are there dealing with circumferential buckling either
+thermal buckling or due to mechanical loading .",0.5167073667073667,0.3,0.47280853205334417,0.5366046234467288,0.4,0.503767871957562,0.019897256739362046,0.5266559950770477
+122,"what analytical investigations have been made of the stability of
+conical shells . how do the results compare with experiment .",0.24359840760532972,0.4,0.20419516450171457,0.36438795230306775,0.5,0.29289089862130974,0.12078954469773803,0.3039931799541987
+123,"has any work been done on determining the nature of compressible
+viscous flow in a straight channel .",0.16203703703703703,0.1,0.3031610197508214,0.12698412698412698,0.1,0.2119004592897435,-0.03505291005291006,0.144510582010582
+124,"in what areas, other than low density wind tunnel flows, is viscous
+compressible flow in slender channels a problem .
+what analytical investigations have been made of the stability of
+conical shells . how do the results compare with experiment .",0.004893902745417188,0.0,0.0,0.004814247891059228,0.0,0.0,-7.965485435796043e-05,0.004854075318238208
+125,jet interference with supersonic flow  -dash experimental papers .,0.29001612225982837,0.3,0.32999043294735075,0.24320866456784335,0.3,0.3063222330898936,-0.04680745769198502,0.26661239341383586
+126,thrust vector control by fluid injection -dash papers .,0.16314815845109604,0.2,0.35571812677402137,0.22017169218322127,0.2,0.4718040076989788,0.05702353373212524,0.19165992531715864
+127,"is it possible to obtain a reasonably simple analytical solution to the
+heat equation for an exponential (in time) heat input .",0.1782092432184939,0.1,0.18804762895303986,0.12407364787111622,0.1,0.1283624763817471,-0.05413559534737769,0.15114144554480508
+128,"has anyone programmed a pump design method for a high-speed digital
+computer .",0.020646020646020648,0.0,0.0,0.017466082683473987,0.0,0.0,-0.003179937962546661,0.019056051664747317
+129,"has anyone derived simplified pump design equation from the fundamental
+three-dimensional equations for incompressible nonviscous flow .",0.29225647630016877,0.3,0.41237833527349776,0.3852979318817828,0.4,0.5311527789860895,0.09304145558161403,0.3387772040909758
+130,"what are the flutter characteristics of the exposed skin panels of the
+x-15 vertical stabilizer when subjected to aerodynamic heating .",0.42439613526570036,0.4,0.5910370011884559,0.5023370927318295,0.4,0.6879589050840057,0.07794095746612911,0.4633666139987649
+131,"what agreement is found between theoretically predicted instability
+times and experimentally measured collapse times for compressed columns
+in creep .",0.2921717171717172,0.3,0.21249866339559725,0.3092957928087238,0.3,0.16972454318915595,0.01712407563700663,0.3007337549902205
+132,theoretical studies of creep buckling .,0.6634977753727754,0.8,0.6266544412771529,0.7170732970732971,0.8,0.5733344106370996,0.05357552170052171,0.6902855362230362
+133,experimental studies of creep buckling .,0.2013738892686261,0.1,0.1658437712408864,0.27065642107658916,0.3,0.3352402212090092,0.06928253180796307,0.23601515517260763
+134,"is it possible to correlate the results on the creep buckling of widely
+different structures within the framework of a single theory .",0.22549019607843135,0.1,0.23463936301137822,0.27702702702702703,0.1,0.2960819109658652,0.05153683094859568,0.2512586115527292
+135,what are the experimental results for the creep buckling of columns .,0.6008231351981351,0.3,0.30645583200080107,0.7200854700854701,0.5,0.530851479113075,0.11926233488733495,0.6604543026418026
+136,"what are the results for the creep buckling of round tubes under
+external pressure .",0.1626984126984127,0.1,0.38979290227231644,0.43225806451612897,0.2,0.8359235133422792,0.26955965181771624,0.29747823860727085
+137,"have any analytical studies been conducted on the time-to-failure
+mechanism associated with creep collapse for a long circular cylindrical
+shell which exhibits both primary and secondary creep as well as elastic
+deformations under various distributed force systems .",0.24107142857142858,0.2,0.24370913791925672,0.20862470862470864,0.2,0.27965946629108696,-0.03244671994671994,0.2248480685980686
+138,"has the effect of initial stresses,  on the frequencies of vibration of
+circular cylindrical shells,  been investigated .",0.11490683229813664,0.1,0.20438239758848611,0.15357142857142858,0.1,0.2640681225725909,0.03866459627329194,0.1342391304347826
+139,"has the effect of the change of initial pressure due to deformation,  on
+the frequencies of vibration of circular cylindrical shells been
+investigated .",0.00885157253943086,0.0,0.0,0.010497436077338631,0.0,0.0,0.0016458635379077713,0.009674504308384745
+140,"what are the discontinuity stresses at junctions in pressurized
+structures .",0.09484804488286382,0.2,0.2522618131027691,0.18457388805436345,0.2,0.3925462634010175,0.08972584317149963,0.13971096646861364
+141,"what analytical solutions are available for stresses in edge-loaded
+shells of revolution .",0.15044422721842077,0.2,0.2072256543262692,0.14530389284398637,0.2,0.21448304883277194,-0.0051403343744343966,0.14787406003120357
+142,"what dome contours minimize discontinuity stresses when used as closures
+on cylindrical pressure vessels .",0.045454545454545456,0.0,0.0,0.07692307692307693,0.0,0.0,0.03146853146853147,0.06118881118881119
+143,"what general solutions for the stresses in pressurized shells of
+revolution are available .",0.5,0.2,0.6509209298071326,0.6666666666666666,0.2,0.8315546295836225,0.16666666666666663,0.5833333333333333
+144,"can studies of pure membrane cylinders having no wall bending stiffness
+but maintaining their shape by virtue of internal pressure provide any
+insight into the behaviour of pressurized cylinders with finite wall
+stiffness .",0.7159090909090908,0.5,0.8067385007154385,0.4461279461279461,0.4,0.5137665365073921,-0.26978114478114473,0.5810185185185185
+145,"what are the best experimental data and classical small deflection
+theory analyses available for pressurized cylinders in bending .",0.5828991263878569,0.5,0.7529803744852828,0.30949216238544414,0.4,0.49457095505440585,-0.27340696400241277,0.4461956443866505
+146,"does a membrane theory exist by which the behaviour of pressurized
+membrane cylinders in bending can be predicted .",0.5833333333333333,0.2,0.6199062332840657,0.5833333333333333,0.2,0.6199062332840657,0.0,0.5833333333333333
+147,"what are the equations which define the stability of simply supported
+corrugated core sandwich cylinders .",0.23775777793634933,0.2,0.23516486475074658,0.2595815921874819,0.3,0.3384355145646856,0.021823814251132556,0.2486696850619156
+148,papers on small deflection theory for buckling of sandwich cylinders .,0.4396029177582575,0.3,0.6286824150385668,0.3214281857326448,0.2,0.5148586863637864,-0.11817473202561268,0.38051555174545115
+149,"has anyone developed an analysis which accurately establishes the large
+deflection behaviour of conical shells .",0.3553407450355549,0.4,0.45449827622138,0.38226521302211863,0.4,0.45449827622138,0.026924467986563727,0.36880297902883674
+150,"what is the magnitude of second-order wing-body interference
+at high supersonic mach number .",0.5833333333333333,0.2,0.6934264036172708,0.8333333333333333,0.2,0.9197207891481876,0.25,0.7083333333333333
+151,"what is the best theoretical method for calculating pressure on the
+surface of a wing alone .",0.05906383434877584,0.1,0.04486076033656595,0.033192384148916794,0.0,0.0,-0.025871450199859043,0.04612810924884632
+152,"how can the effect of the boundary-layer on wing pressure be calculated,
+and what is its magnitude .",0.04010847565925258,0.1,0.1400995678301123,0.02312696179392559,0.0,0.0,-0.01698151386532699,0.031617718726589084
+153,how should the navier-stokes difference equations be solved .,0.290928540864356,0.3,0.3465885302021158,0.32301587301587303,0.3,0.3536573263781091,0.032087332151517045,0.3069722069401145
+154,"which  iterative method for solving linear elliptic
+difference equations is most rapidly convergent .",0.5833333333333333,0.2,0.6480409554829326,0.8333333333333333,0.2,0.8212377705398237,0.25,0.7083333333333333
+155,technical report on measurement of ablation during flight .,0.35187793427230046,0.3,0.34015001901211017,0.1781659413585535,0.2,0.17955683620108592,-0.17371199291374698,0.265021937815427
+156,"what qualitative and quantitative material is available on ablation
+materials research .",0.5673217874746512,0.7,0.620104160674023,0.5443018681996454,0.7,0.5728198349525341,-0.023019919275005796,0.5558118278371483
+157,"have flow fields been calculated for blunt-nosed bodies and compared
+with experiment for a wide range of free stream conditions and body
+shapes .",0.4419898848451679,0.7,0.5861349364015792,0.3676829906345067,0.6,0.5435804161199637,-0.07430689421066117,0.4048364377398373
+158,what are the available properties of high-temperature air .,0.31991150242843835,0.2,0.5347363368441794,0.37218326885880076,0.3,0.6396601408337269,0.05227176643036241,0.3460473856436196
+159,"what is the magnitude of aerodynamic damping in flexible vibration modes
+of a slender body of revolution characteristic of launch vehicles .",0.09949130367556873,0.2,0.1776028646926492,0.08862245960184259,0.2,0.16014909903145455,-0.010868844073726139,0.09405688163870565
+160,"compressive circumferential stresses in a torispherical shell reveal
+the possibility of buckling under internal pressure . has anyone
+investigated for which ranges of shell parameters these stresses are
+sufficiently large to cause elastic buckling .",0.039265856353908724,0.0,0.0,0.12093789008760672,0.1,0.24842742676916893,0.081672033733698,0.08010187322075772
+161,"is there an integral method to give a single and sufficiently accurate
+method of calculating the laminar separate point for various
+incompressible and compressible boundary layers with zero heat transfer .",0.5144524058317161,0.3,0.6391034866124042,0.5379656928437416,0.3,0.7193068819147438,0.023513287012025486,0.5262090493377289
+162,"what accurate or exact solutions of the laminar separation point for
+various incompressible and compressible boundary layers with zero heat
+transfer are available .",0.17542115266753852,0.1,0.13742550997470102,0.25945892110762797,0.2,0.21003026995882845,0.08403776844008945,0.21744003688758323
+163,"can the hypersonic similarity results be applied to the technique of
+predicting surface pressures of an ogive forebody at angle of attack .",0.2836949375410914,0.2,0.4367467095119258,0.2959595959595959,0.2,0.4367467095119258,0.012264658418504548,0.28982726675034365
+164,what determines the onset of shock-induced boundary-layer separation .,0.42155026990553307,0.4,0.4788487440498752,0.45075913669663675,0.4,0.5808311313512923,0.029208866791103683,0.4361547033010849
+165,"are the stable profiles of a compressible boundary layer induced by a
+moving wave known .",0.39285714285714285,0.2,0.5912352048230277,0.5833333333333333,0.2,0.6934264036172708,0.1904761904761904,0.488095238095238
+166,"are there experimental results on the stability of a compressible
+boundary layer induced by a moving wave .",0.02140985662392761,0.0,0.0,0.040073636672378156,0.1,0.07311683844390994,0.018663780048450547,0.030741746648152882
+167,"exact solution methods for calculating the ablative mass loss of a
+material ablating at high temperatures in a hypersonic flight
+environment .",0.08834586466165413,0.0,0.0,0.41666666666666663,0.2,0.5540663910176149,0.3283208020050125,0.2525062656641604
+168,"what approximate solutions are known to the direct problem of transonic
+flow in the throat of a nozzle,  i.e. finding the flow in a given
+nozzle .",0.26666666666666666,0.2,0.48381288316677695,0.12333333333333332,0.1,0.21840743681816419,-0.14333333333333334,0.195
+169,"what approximate solutions are known to the indirect problem of
+transonic flow in the throat of a nozzle,  i.e. finding a nozzle which
+has a given axial velocity distribution .",0.19371345029239767,0.2,0.2856436410275446,0.3042194092827004,0.2,0.4144299250118475,0.11050595899030274,0.24896642978754904
+170,"why do users of orthodox pitot-static tubes often find that the
+calibrations appear to be,. - (a) significantly different from those formerly
+specified,  (b) wildly variable at low reynolds numbers .",0.5059606481481481,0.5,0.6514139732256141,0.6340909090909091,0.4,0.751412262126836,0.12813026094276103,0.5700257786195286
+171,"has a comparison been made between interference-free drag measurements
+using free-flight models and similar measurements made in a low-blockage
+wind tunnel .",0.6333333333333333,0.3,0.8274365110343983,0.6388888888888888,0.3,0.6757709465491791,0.005555555555555536,0.6361111111111111
+172,solution of the blasius problem with three-point boundary conditions .,0.6791666666666667,0.4,0.7179581484098557,0.8875,0.4,0.925248016143815,0.20833333333333326,0.7833333333333333
+173,"references on lyapunov's method on the stability of linear
+differential equations with periodic coefficients .",0.5833333333333333,0.2,0.6934264036172708,1.0,0.2,1.0,0.41666666666666674,0.7916666666666666
+174,"obtain all papers and reports that contain shock detachment distance
+data .",0.1547276636795797,0.2,0.36069019466199115,0.10870216885292261,0.1,0.19602843459435057,-0.046025494826657104,0.13171491626625115
+175,work on flow in channels at low reynolds numbers .,0.04563544982149634,0.0,0.0,0.04996412585521444,0.0,0.0,0.004328676033718101,0.04779978783835539
+176,"some approximate analytical heat conduction solutions using methods
+other than biot's principle .",0.06213929895415371,0.0,0.0,0.08656994725573432,0.1,0.12824687569501922,0.024430648301580607,0.074354623104944
+177,"what mode of stalling can be expected for each stage of an axial
+compressor .",0.7412087912087911,0.4,0.8388372112048964,0.7222222222222222,0.4,0.8297899182613868,-0.01898656898656892,0.7317155067155067
+178,"has a criterion been established for determining the axial compressor
+choking line .",0.5456730769230769,0.3,0.8173721167448778,0.6435897435897435,0.3,0.8698944585066984,0.09791666666666665,0.5946314102564102
+179,"has a theory of quasi-conical flows been developed, in supersonic
+linearised theory, for which the upwash distribution on the lifting
+surface, apart from being a homogeneous function in the
+co-ordinate, is permitted to have a quite general functional form .",0.29449880983866705,0.2,0.4144299250118475,0.34228698501872656,0.2,0.44149241373678083,0.04778817518005951,0.3183928974286968
+180,how does scale height vary with altitude in an atmosphere .,0.3945369918302249,0.3,0.39216949344416374,0.4362672868884049,0.3,0.3557981268823876,0.04173029505817999,0.4154021393593149
+181,"jet interference with supersonic flows
+theoretical papers .",0.25298603931335506,0.1,0.24913276910075044,0.27047145604380385,0.2,0.3571560500460547,0.01748541673044879,0.26172874767857945
+182,"effects of leading-edge bluntness on the flutter characteristics of some
+square-planform double-wedge airfoils at mach numbers less than 15.4.",0.5833333333333333,0.2,0.66967181649423,0.5833333333333333,0.2,0.66967181649423,0.0,0.5833333333333333
+183,"what factors have been shown to have a primary influence on sonic boom
+strength .",0.5716685819626995,0.7,0.47308861050652173,0.6244265125337999,0.6,0.6003711013090012,0.05275793057110034,0.5980475472482497
+184,work on small-oscillation re-entry motions .,0.10229505381481066,0.0,0.0,0.33643667272244154,0.3,0.42953694833433737,0.23414161890763088,0.21936586326862612
+185,experimental studies on panel flutter .,0.7929639804639804,0.6,0.7904819574869932,0.7838624338624337,0.6,0.8071376348433057,-0.009101546601546717,0.7884132071632071
+186,"how can wing-body,  flow field interference effects be approximated
+rationally .",0.2865879321798931,0.5,0.5933607200949346,0.17409969846291462,0.4,0.3600558568883671,-0.11248823371697847,0.23034381532140386
+187,"has anyone analytically or experimentally investigated the effects of
+internal pressure on the buckling of circular-cylindrical shells under
+bending .",0.09766754850088183,0.2,0.1528406081835328,0.16224637681159418,0.2,0.2522457614005466,0.06457882831071235,0.12995696265623802
+188,"what theoretical and experimental work has been done on the excitation
+and response of typical structures in a noise environment .",0.4728286559286627,0.4,0.556641054565232,0.41183261534427235,0.5,0.5681584916867225,-0.06099604058439034,0.4423306356364675
+189,"is there a design method for calculating thermal fatigue endurances of
+components of various types and sizes in a variety of circumstances .",0.17379192666935567,0.1,0.0967221933748192,0.1558760278482266,0.2,0.15814646672181454,-0.017915898821129067,0.16483397725879112
+190,"will an analysis of panel flutter based on arbitrarily assumed modes of
+deformation prove satisfactory,  and if so,  what is the minimum number
+of modes that need be considered .",0.3597619047619048,0.3,0.39438434517160015,0.4609469696969697,0.3,0.5338418008420618,0.1011850649350649,0.4103544372294372
+191,"what is the criterion for true panel flutter,  as opposed to small
+amplitude vibration arising from acoustic disturbances .",0.6231745662092755,0.7,0.44541039839615815,0.3908399379379184,0.4,0.24512769449225036,-0.2323346282713571,0.5070072520735969
+192,papers dealing with uniformly loaded sectors .,0.4654761904761905,0.3,0.592512031964586,0.5077380952380952,0.3,0.6096199500078984,0.04226190476190472,0.48660714285714285
+193,general methods of solving clamped plate problems .,0.6840360733831524,0.7,0.7317297441559515,0.831885975001917,0.8,0.8839186865620725,0.14784990161876455,0.7579610241925347
+194,"how can the analytical solution of the buckling strength of a uniform
+circular cylinder loaded in axial compression be refined so as to lower
+the buckling load .",0.27977728100678917,0.3,0.2318859533092355,0.23611111111111113,0.2,0.23467776707889956,-0.043666169895678036,0.25794419605895014
+195,"in the problem of the buckling strength of uniform circular cylinders
+loaded in axial compression,  does the linear solution help with
+improving the non-linear one .",0.1008852258852259,0.1,0.1480409554829326,0.13286052009456265,0.1,0.18154179253735267,0.031975294209336744,0.11687287298989427
+196,"the problem of similarity for representative investigation of
+aeroelastic effects in a flow with the absence of heating effects .",0.20933673303743086,0.3,0.3499968548204142,0.15828711526365413,0.3,0.2952819749811217,-0.05104961777377673,0.18381192415054248
+197,how is fatigue damage estimated using the normal long-hand method .,0.8333333333333334,0.3,0.8752045980473071,0.6180555555555555,0.2,0.6651640917528849,-0.2152777777777779,0.7256944444444444
+198,"is there any information available on the difference in the effects of
+various edge conditions on the buckling of cylindrical shells .",0.4178571428571428,0.2,0.5735424265967997,0.5141760651629073,0.3,0.7073103183000377,0.09631892230576444,0.46601660401002504
+199,"have non-linear large deflection analyses been conducted for shell
+shapes other than conical .",0.1256584690513094,0.2,0.15030051947336306,0.1159229930781655,0.1,0.09576745329637855,-0.009735475973143892,0.12079073106473745
+200,"are asymptotic methods sufficiently accurate in the determination of
+pre-buckling stresses in torispherical shells,  or must we resort to
+numerical methods .",0.2577639751552795,0.1,0.2960819109658653,0.2566137566137566,0.2,0.3759063358712073,-0.0011502185415228627,0.25718886588451806
+201,"what are the nonequilibrium chemical constituents in the viscous shock
+layer ahead of a blunt re-entry vehicle .",0.24021968000398616,0.3,0.4367931902625208,0.30910712874117674,0.4,0.5487379204458991,0.06888744873719058,0.27466340437258147
+202,"how accurate are existing analytical theories in estimating pressure
+distributions on cones at incidence,  at hypersonic speeds .",0.2446889344343663,0.4,0.2558097031404176,0.20660293962870166,0.3,0.21329730238906844,-0.03808599480566463,0.22564593703153396
+203,"are simple empirical methods of any use for estimating pressure
+distribution in cones .",0.10204841627851069,0.2,0.1716830951068149,0.1363737147163963,0.3,0.30637875169839035,0.03432529843788562,0.1192110654974535
+204,do viscous effects seriously modify pressure distributions .,0.09160529142212606,0.2,0.26026565753952224,0.04283099151601932,0.0,0.0,-0.04877429990610674,0.06721814146907269
+205,"has anyone investigated theoretically whether surface flexibility
+can stabilize a laminar boundary layer .",0.5,0.2,0.6509209298071326,0.8333333333333333,0.2,0.9197207891481876,0.33333333333333326,0.6666666666666666
+206,"how do subsonic and transonic flutter data measured in the new langley
+transonic dynamics tunnel compare with similar data obtained in other
+facilities .",0.10993077742279021,0.2,0.30776412138162756,0.22431427243142724,0.2,0.4358923164702953,0.11438349500863702,0.16712252492710872
+207,"how do large changes in new mass ratio quantitatively affect
+wing-flutter boundaries .",0.3433535353535354,0.2,0.4065385723067921,0.20692268575563774,0.2,0.3534127876050964,-0.13643084959789767,0.2751381105545866
+208,"what is the effect of the shape of the drag polar of a lifting
+spacecraft on the amount of reduction in maximum deceleration obtainable by
+continuously varying the aerodynamic coefficients during re-entry .",0.6746031746031745,0.6,0.7574968275334034,0.7027777777777778,0.6,0.7711046000160218,0.028174603174603297,0.6886904761904762
+209,"what are the physical significance and characteristics of separated
+laminar and turbulent boundary layer flows .",0.21542203451072992,0.4,0.22582472667874778,0.1486072792377557,0.1,0.1019109450635844,-0.0668147552729742,0.18201465687424281
+210,"has anyone analytically investigated the stabilizing influence of soft
+elastic cores on the buckling strength of cylindrical shells subjected
+to non-uniform external pressure .",0.33018932338002277,0.2,0.48255059646431975,0.34724270391143536,0.2,0.48255059646431975,0.017053380531412587,0.33871601364572906
+211,"what papers are available on the buckling of empty cylindrical shells
+under non-uniform pressure .",0.15487595860730188,0.2,0.06953490410747619,0.1535376372362343,0.1,0.03299700806327271,-0.0013383213710675967,0.15420679792176809
+212,"what effect do thermal stresses have on the compressive buckling
+strength of ring-stiffened cylinders .",0.45193933776447864,0.5,0.5667448986692801,0.48922707429089546,0.5,0.5687197948330739,0.037287736526416815,0.47058320602768705
+213,"what is the effect on cylinder buckling of a circumferential stress
+system that varies in the axial direction .",0.5161594323687505,0.6,0.671784826677242,0.5806244745452089,0.5,0.6087994651344372,0.06446504217645843,0.5483919534569797
+214,"can non-linear shallow shell analysis be reduced to an engineering
+technique by use of the matrix .",0.15524054573466112,0.1,0.24630238874073,0.16806617129818463,0.1,0.24630238874073,0.012825625563523513,0.16165335851642287
+215,"is it possible to predict the shape of a shroud which will allow
+simulation of the nose region flow field for a sphere in hypersonic flow .",0.043055555555555555,0.0,0.0,0.047379032258064516,0.0,0.0,0.0043234767025089604,0.045217293906810035
+216,"what investigations have been made of the wave system created by a
+static pressure distribution over a liquid surface .",0.0024691358024691358,0.0,0.0,0.002770083102493075,0.0,0.0,0.00030094730002393905,0.0026196094524811053
+217,"has anyone investigated the effect of shock generated vorticity on heat
+transfer to a blunt body .",0.39732311934953624,0.4,0.5672227324927723,0.36541366969290145,0.4,0.4644389235458954,-0.03190944965663478,0.38136839452121885
+218,what is the heat transfer to a blunt body in the absence of vorticity .,0.3099498230591327,0.3,0.3210868881286158,0.31040129724998244,0.5,0.44613264264760744,0.00045147419084973217,0.3101755601545576
+219,"what are the general effects on flow fields when the reynolds number is
+small .",0.08697125093553897,0.2,0.14210876216475854,0.043788376238101896,0.0,0.0,-0.04318287469743707,0.06537981358682043
+220,"find a calculation procedure applicable to all incompressible laminar
+boundary layer flow problems having good accuracy and reasonable
+computation time .",0.19642536542948338,0.4,0.20601985835699674,0.25234473144825814,0.3,0.27870157149025604,0.05591936601877476,0.22438504843887075
+221,"papers applicable to this problem (calculation procedures for laminar
+incompressible flow with arbitrary pressure gradient) .",0.2370694218921511,0.4,0.3629242697785903,0.25876650480495494,0.4,0.39567287731660133,0.02169708291280384,0.24791796334855304
+222,has anyone investigated the shear buckling of stiffened plates .,0.6546206209249688,0.6,0.7221124197985725,0.7338684463684464,0.6,0.7487912473474161,0.07924782544347764,0.6942445336467076
+223,papers on shear buckling of unstiffened rectangular plates under shear .,0.4637739386634525,0.2,0.5855700749881525,0.5866666666666667,0.3,0.7365896932159578,0.12289272800321416,0.5252203026650596
+224,"in practice, how close to reality are the assumptions that the flow
+in a hypersonic shock tube using nitrogen is non-viscous and in
+thermodynamic equilibrium .",0.12115859914142699,0.1,0.07930749312667738,0.13978071459082664,0.1,0.09384413330947906,0.01862211544939965,0.13046965686612683
+225,"what design factors can be used to control lift-drag ratios at mach
+numbers above 5 .",0.09511961450058924,0.2,0.1453844457692427,0.096101383809579,0.3,0.20199489228254294,0.0009817693089897578,0.09561049915508413
