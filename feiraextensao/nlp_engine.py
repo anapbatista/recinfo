@@ -45,6 +45,13 @@ def carregar_recursos_nlp():
     """Carrega o modelo em português do spaCy (`pt_core_news_sm`) e os recursos do NLTK."""
     nlp = spacy.load("pt_core_news_sm")
 
+    # Servidores (ex.: Streamlit Cloud) não trazem os dados do NLTK: baixa só se faltarem.
+    for caminho in ("stemmers/rslp", "corpora/stopwords"):
+        try:
+            nltk.data.find(caminho)
+        except LookupError:
+            nltk.download(caminho.split("/")[1], quiet=True)
+
     try:
         nltk.data.find("stemmers/rslp")
         stemmer = RSLPStemmer()
