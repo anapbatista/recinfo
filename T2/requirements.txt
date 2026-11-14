@@ -1,0 +1,24 @@
+# Versões usadas para gerar os resultados entregues (Python 3.12).
+#
+# llama-cpp-python: o índice extra abaixo traz a biblioteca já compilada para CPU;
+# sem ele, o pip compila a partir do código-fonte (exige compilador C/C++ e leva alguns minutos).
+--prefer-binary
+--extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+
+# PyTorch: em máquina sem GPU, a versão só de CPU é bem menor. Para usá-la, instale antes:
+#   pip install torch==2.15.0 --index-url https://download.pytorch.org/whl/cpu
+torch==2.15.0
+
+numpy==2.5.4
+pandas==3.1.1
+nltk==3.10.4
+matplotlib==3.11.2
+transformers==5.23.0
+sentence-transformers==6.3.0
+huggingface_hub==2.4.0
+llama-cpp-python==0.3.36
+ir-measures==0.4.3
+
+# Execução do notebook
+nbconvert==7.17.2
+ipykernel==7.4.0
