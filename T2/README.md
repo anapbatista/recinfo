@@ -116,7 +116,9 @@ jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeou
 | `rag_experiment.csv` | Experimento sem RAG × com RAG: `query_id`, `query`, `condition` (A ou B), `context_doc_ids`, `prompt`, `answer`, as quatro notas e as justificativas |
 | `rag_respostas.json` | Respostas geradas pela LLM (com prompt, número de tokens e tempo) |
 | `avaliacao_rag_cega.csv` | Planilha de avaliação com as 20 respostas embaralhadas, sem a condição |
-| `avaliacao_rag_preenchida.csv` | A mesma planilha com as notas e justificativas preenchidas |
+| `documentos_contexto_rag.md` | Texto dos cinco documentos do contexto de cada resposta, na ordem da planilha (apoio à leitura dos avaliadores) |
+| `avaliacao_rag_ana.csv`, `avaliacao_rag_italo.csv` | A planilha preenchida por cada integrante, de forma independente; a nota final é a média das duas |
+| `avaliacao_rag_preavaliacao_ia.csv` | Pré-avaliação feita com IA durante o desenvolvimento; não entra nas notas finais e é comparada com a avaliação humana no relatório |
 | `grafico_*.png` | Gráficos gerados pelo notebook |
 
 Observações sobre os arquivos de ranking:

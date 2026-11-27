@@ -7,7 +7,7 @@
 %        resultados/grafico_comparacao_sistemas.png
 %   2. Compilador: pdfLaTeX.
 %   3. Procure por \completar no texto: são os pontos que dependem do grupo
-%      (e-mails, revisão das notas da avaliação humana do RAG, uso de IA).
+%      (e-mails e outros usos de IA pelo grupo).
 %
 % Limite do enunciado: 20 páginas, sem contar as referências. Se o PDF passar
 % do limite, troque "11pt" por "10pt" na linha do \documentclass.
@@ -74,7 +74,7 @@ A motivação deste trabalho é entender, com evidências, o que cada um desses 
 \end{center}
 com avaliação quantitativa, análise por consulta e investigação de casos de sucesso e de falha.
 
-Em resumo, os resultados no conjunto de teste são os seguintes. O BM25 sobre um índice invertido implementado do zero e a busca semântica têm desempenho global parecido (NDCG@10 de 0,3280 e 0,3167), mas acertam consultas diferentes. A fusão por RRF eleva o NDCG@10 para 0,3549. O reranking com cross-encoder acrescenta apenas 0,0015 e consome cerca de 97\% do tempo do pipeline. No experimento de RAG, o contexto recuperado eleva a fidelidade média das respostas de 0,7 para 1,9 (escala de 0 a 2), e a análise ponta a ponta mostra que a falha mais grave nasce na recuperação, e não na geração.
+Em resumo, os resultados no conjunto de teste são os seguintes. O BM25 sobre um índice invertido implementado do zero e a busca semântica têm desempenho global parecido (NDCG@10 de 0,3280 e 0,3167), mas acertam consultas diferentes. A fusão por RRF eleva o NDCG@10 para 0,3549. O reranking com cross-encoder acrescenta apenas 0,0015 e consome cerca de 96\% do tempo do pipeline. No experimento de RAG, o contexto recuperado eleva a fidelidade média das respostas de 0,20 para 1,75 (escala de 0 a 2, média de dois avaliadores), e a análise ponta a ponta mostra que a falha mais grave nasce na recuperação, e não na geração.
 
 A Seção~\ref{sec:metodologia} descreve os componentes, a Seção~\ref{sec:avaliacao} o protocolo de avaliação, a Seção~\ref{sec:resultados} os resultados e as análises, e a Seção~\ref{sec:conclusao} as conclusões.
 
@@ -149,7 +149,7 @@ As 10 consultas do experimento são as do enunciado, sorteadas com seed 42 entre
 
 \paragraph{Avaliação do RAG.} Na recuperação, calculamos Precision@5, Recall@5 e Hit@5 (1 se pelo menos um relevante chegou ao contexto) para as 10 consultas. Na geração, cada resposta recebe nota 0, 1 ou 2, com justificativa, em quatro critérios: fidelidade (as afirmações são sustentadas pelo contexto), completude, utilidade e rastreabilidade (as afirmações podem ser associadas aos \cod{doc\_ids}). As 20 respostas são embaralhadas (seed 42) e apresentadas em uma planilha que não informa a condição. Na condição sem RAG não há contexto externo: a fidelidade é avaliada contra os mesmos Top-5 documentos da condição com RAG, e a rastreabilidade é registrada como N/A e fica fora da média. A avaliação é cega só em parte, porque uma resposta com citações revela a condição.
 
-\completar{descrever quem avaliou. As notas deste relatório são a pré-avaliação feita com apoio de IA; depois da conferência pelos integrantes, informar aqui se os dois avaliaram de forma independente e qual foi a concordância, e atualizar a Tabela~\ref{tab:rag} e, se alguma nota mudar, os números citados na Introdução, na Seção~\ref{sec:res-rag} e nas Considerações finais.}
+\paragraph{Avaliadores.} Como o enunciado recomenda, os dois integrantes avaliaram as 20 respostas de forma independente, cada um na sua cópia da planilha cega, lendo os cinco documentos do contexto de cada resposta. A nota final de cada resposta em cada critério é a média das duas notas (0; 0,5; 1; 1,5 ou 2). A concordância é medida pela fração de notas iguais e pelo kappa ponderado de Cohen com pesos quadráticos~\cite{cohen1968}, que desconta a concordância esperada por acaso e pesa mais uma divergência de 2 pontos do que uma de 1. Os valores são interpretados pelas faixas de Landis e Koch~\cite{landis1977}.
 
 \paragraph{Ambiente computacional.} Todos os experimentos rodaram em um notebook com processador Intel Core i5-1334U (12 threads), 16~GB de RAM, sem GPU, em Linux. Versões: Python 3.12.3, NumPy 2.5.4, pandas 3.1.1, NLTK 3.10.4, PyTorch 2.15.0 (CPU), Transformers 5.23.0, Sentence Transformers 6.3.0, llama-cpp-python 0.3.36 e ir-measures 0.4.3. Os tempos reportados foram medidos nesse hardware. Os resultados ficam gravados nos arquivos CSV padronizados (\cod{results\_*.csv}, \cod{metrics\_per\_query.csv}, \cod{typo\_experiment.csv} e \cod{rag\_experiment.csv}).
 
@@ -257,7 +257,7 @@ Modelo & Entrada & Docs truncados & Tempo & P@10 & R@10 & MAP@10 & NDCG@10 \\
 \end{tabular}
 \end{table}
 
-Informações do modelo escolhido: \cod{sentence-transformers/all-MiniLM-L6-v2} (revisão \cod{1110a243fd}), biblioteca Sentence Transformers 6.3.0, embeddings de 384 dimensões normalizados para norma 1, similaridade do cosseno, entrada máxima de 256 tokens com truncamento de 2.864 dos 3.633 documentos. A geração dos embeddings dos documentos levou 227,7~s, e o tempo médio por consulta, incluindo o embedding da consulta e a comparação com todos os documentos, foi de 159,6~ms.
+Informações do modelo escolhido: \cod{sentence-transformers/all-MiniLM-L6-v2} (revisão \cod{1110a243fd}), biblioteca Sentence Transformers 6.3.0, embeddings de 384 dimensões normalizados para norma 1, similaridade do cosseno, entrada máxima de 256 tokens com truncamento de 2.864 dos 3.633 documentos. A geração dos embeddings dos documentos levou 227,7~s, e o tempo médio por consulta, incluindo o embedding da consulta e a comparação com todos os documentos, foi de 173,9~ms.
 
 \FloatBarrier
 \subsection{Comparação entre busca lexical e busca semântica}
@@ -421,7 +421,7 @@ Híbrido sem reranking & 0,2623 & 0,1482 & 0,1064 & 0,3307 & -- \\
 
 O modelo escolhido é o \cod{cross-encoder/ms-marco-MiniLM-L6-v2} (revisão \cod{233902d25c}), com entrada máxima de 512 tokens. No \cod{test}, 1.424 dos 16.150 pares (consulta, documento) passam desse tamanho (8,8\%) e têm o final do documento truncado.
 
-\paragraph{Resultado no \cod{test} e tempos.} O reranking leva o NDCG@10 de 0,3549 para 0,3564 e o MAP@10 de 0,1353 para 0,1389, mas reduz P@10 e R@10 (Tabela~\ref{tab:geral} e Figura~\ref{fig:sistemas}). O custo está na Tabela~\ref{tab:tempos}: o reranking responde por cerca de 97\% do tempo do pipeline. Neste hardware e nesta coleção, é a etapa mais cara e a de menor retorno em qualidade de ranking; quase todo o ganho sobre os sistemas isolados vem da fusão.
+\paragraph{Resultado no \cod{test} e tempos.} O reranking leva o NDCG@10 de 0,3549 para 0,3564 e o MAP@10 de 0,1353 para 0,1389, mas reduz P@10 e R@10 (Tabela~\ref{tab:geral} e Figura~\ref{fig:sistemas}). O custo está na Tabela~\ref{tab:tempos}: o reranking responde por cerca de 96\% do tempo do pipeline. Neste hardware e nesta coleção, é a etapa mais cara e a de menor retorno em qualidade de ranking; quase todo o ganho sobre os sistemas isolados vem da fusão.
 
 \begin{figure}[!htb]
 \centering
@@ -439,10 +439,10 @@ O modelo escolhido é o \cod{cross-encoder/ms-marco-MiniLM-L6-v2} (revisão \cod
 Etapa & Tempo médio \\
 \midrule
 Busca lexical (pré-processamento da consulta + BM25) & 0,26 ms \\
-Busca semântica (embedding da consulta + cosseno com 3.633 documentos) & 159,6 ms \\
-Fusão (RRF) & 0,06 ms \\
+Busca semântica (embedding da consulta + cosseno com 3.633 documentos) & 173,9 ms \\
+Fusão (RRF) & 0,05 ms \\
 Reranking (50 pares no cross-encoder) & 4.718,6 ms \\
-\textbf{Recuperação completa} & \textbf{4.878,6 ms} \\
+\textbf{Recuperação completa} & \textbf{4.892,8 ms} \\
 \midrule
 Geração sem RAG (prompt de 46 tokens em média) & 7,6 s \\
 Geração com RAG (prompt de 2.285 tokens em média) & 85,4 s \\
@@ -516,7 +516,7 @@ A Tabela~\ref{tab:rag} traz, para as 10 consultas, as métricas de recuperação
 \begin{table}[!htb]
 \centering\footnotesize
 \setlength{\tabcolsep}{3pt}
-\caption{Experimento sem RAG (A) e com RAG (B). Rel.: relevantes no contexto (de 5). Notas de 0 a 2 em fidelidade, completude, utilidade e rastreabilidade (esta última só se aplica a B).}
+\caption{Experimento sem RAG (A) e com RAG (B). Rel.: relevantes no contexto (de 5). Notas finais de 0 a 2 (média dos dois avaliadores) em fidelidade, completude, utilidade e rastreabilidade (esta última só se aplica a B).}
 \label{tab:rag}
 \begin{tabular}{llcccccccccc}
 \toprule
@@ -524,34 +524,54 @@ A Tabela~\ref{tab:rag} traz, para as 10 consultas, as métricas de recuperação
 \cmidrule(lr){3-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(lr){10-11}\cmidrule(lr){12-12}
 Consulta & Pergunta & Rel. & P@5 & R@5 & A & B & A & B & A & B & B \\
 \midrule
-PLAIN-68 & What is Actually in Chicken Nuggets? & 1 & 0,2 & 0,018 & 0 & 2 & 1 & 2 & 1 & 2 & 2 \\
+PLAIN-68 & What is Actually in Chicken Nuggets? & 1 & 0,2 & 0,018 & 0 & 2 & 0 & 2 & 1,5 & 2 & 2 \\
 PLAIN-2450 & Are Organic Foods Safer? & 2 & 0,4 & 0,053 & 1 & 1 & 1 & 2 & 2 & 2 & 2 \\
-PLAIN-153 & How Should I Take Probiotics? & 5 & 1,0 & 0,106 & 1 & 2 & 1 & 2 & 1 & 2 & 2 \\
-PLAIN-2850 & More Antibiotics In White Meat or Dark Meat? & 0 & 0,0 & 0,000 & 0 & 2 & 1 & 0 & 1 & 0 & 1 \\
-PLAIN-2750 & Preventing the Common Cold with Probiotics? & 4 & 0,8 & 0,068 & 1 & 2 & 1 & 1 & 1 & 2 & 2 \\
-PLAIN-270 & Is Caffeinated Tea Really Dehydrating? & 2 & 0,4 & 0,038 & 1 & 2 & 1 & 2 & 1 & 2 & 2 \\
-PLAIN-2470 & Is Milk Good for Our Bones? & 3 & 0,6 & 0,041 & 0 & 2 & 1 & 2 & 1 & 2 & 1 \\
-PLAIN-2430 & Preventing Brain Loss with B Vitamins? & 3 & 0,6 & 0,065 & 1 & 2 & 1 & 2 & 1 & 2 & 0 \\
-PLAIN-238 & How Chemically Contaminated Are We? & 1 & 0,2 & 0,019 & 1 & 2 & 1 & 1 & 1 & 1 & 2 \\
-PLAIN-3342 & Is Coconut Milk Good For You? & 2 & 0,4 & 0,667 & 1 & 2 & 1 & 1 & 2 & 1 & 2 \\
+PLAIN-153 & How Should I Take Probiotics? & 5 & 1,0 & 0,106 & 0 & 2 & 1 & 2 & 1,5 & 2 & 2 \\
+PLAIN-2850 & More Antibiotics In White Meat or Dark Meat? & 0 & 0,0 & 0,000 & 0 & 2 & 0 & 1 & 1,5 & 1 & 2 \\
+PLAIN-2750 & Preventing the Common Cold with Probiotics? & 4 & 0,8 & 0,068 & 1 & 2 & 1 & 1,5 & 1,5 & 2 & 2 \\
+PLAIN-270 & Is Caffeinated Tea Really Dehydrating? & 2 & 0,4 & 0,038 & 0 & 2 & 0 & 2 & 1,5 & 2 & 2 \\
+PLAIN-2470 & Is Milk Good for Our Bones? & 3 & 0,6 & 0,041 & 0 & 1 & 0 & 1,5 & 1,5 & 2 & 1,5 \\
+PLAIN-2430 & Preventing Brain Loss with B Vitamins? & 3 & 0,6 & 0,065 & 0 & 2 & 0,5 & 1,5 & 1,5 & 2 & 1,5 \\
+PLAIN-238 & How Chemically Contaminated Are We? & 1 & 0,2 & 0,019 & 0 & 2 & 0 & 1 & 1 & 2 & 2 \\
+PLAIN-3342 & Is Coconut Milk Good For You? & 2 & 0,4 & 0,667 & 0 & 1,5 & 0,5 & 1,5 & 2 & 1 & 2 \\
 \midrule
-Média & & 2,3 & 0,46 & 0,107 & 0,7 & 1,9 & 1,0 & 1,5 & 1,2 & 1,6 & 1,6 \\
+Média & & 2,3 & 0,46 & 0,107 & 0,20 & 1,75 & 0,40 & 1,60 & 1,55 & 1,80 & 1,90 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \paragraph{Recuperação.} Em 9 das 10 consultas pelo menos um relevante chegou à LLM (Hit@5 de 0,9), e em média 2,3 dos 5 documentos do contexto são relevantes (P@5 de 0,46). O R@5 médio de 0,107 é baixo por construção: as consultas têm de 3 a 73 relevantes, e mesmo com cinco relevantes em todos os contextos o R@5 médio seria 0,234. O P@5 calculado pelos qrels subestima alguns contextos: em PLAIN-2450, o primeiro documento (MED-1140, \emph{Organic food: buying more safety or just peace of mind?}) trata exatamente da pergunta e não tem julgamento.
 
-\paragraph{Geração.} \completar{revisar este parágrafo depois da conferência das notas pelos integrantes.} A fidelidade é o critério que mais muda, de 0,7 para 1,9. Sem RAG, a LLM responde de memória, com afirmações genéricas que os documentos da coleção em parte não sustentam; três respostas recebem nota 0. Com RAG, 9 das 10 respostas têm fidelidade 2; a exceção é PLAIN-2450, com um erro factual apesar do documento correto no contexto. Completude (1,0 para 1,5) e utilidade (1,2 para 1,6) melhoram menos. As respostas com RAG tendem a resumir um único documento: 8 das 10 citam exatamente um \cod{doc\_id}, e em 7 delas é o primeiro do contexto, de modo que a ordem produzida pelo reranking pesa no que a LLM responde. Em duas consultas a utilidade caiu com o RAG: em PLAIN-2850 nenhum relevante foi recuperado, e a LLM se absteve; em PLAIN-3342 os documentos tratam de coco em geral, e a LLM declarou falta de evidência sobre leite de coco. A instrução de avisar quando não há evidência torna o modelo mais cauteloso, o que aumenta a fidelidade e pode custar utilidade.
+\paragraph{Geração.} A fidelidade é o critério que mais muda, de 0,20 para 1,75. Sem RAG, a LLM responde de memória, e em 8 das 10 consultas os dois avaliadores deram nota 0, porque a resposta traz afirmações que os documentos não sustentam ou que os contradizem (o chá cafeinado ``desidrata'', o probiótico deve ser tomado com um copo de água, o leite é bom para os ossos sem ressalva). Com RAG, 7 das 10 respostas têm fidelidade 2 dos dois avaliadores. As exceções são PLAIN-2450 (erro factual com o documento correto no contexto), PLAIN-2470 (dado de um documento atribuído a outro) e PLAIN-3342 (divergência entre os avaliadores). A completude sobe de 0,40 para 1,60, mas fica abaixo de 2 em seis consultas. As respostas com RAG tendem a resumir um único documento: 8 das 10 citam exatamente um \cod{doc\_id}, e em 7 delas é o primeiro do contexto. Assim, a ordem produzida pelo reranking pesa no que a LLM responde, e evidências dos outros documentos ficam de fora.
 
-A rastreabilidade média na condição com RAG é 1,6. Sete respostas permitem ligar as afirmações aos \cod{doc\_ids}. Os problemas são de três tipos: nenhuma citação (PLAIN-2430, apesar da instrução do prompt), dado de um documento atribuído a outro (PLAIN-2470) e conclusão sobre o contexto inteiro apoiada em um único documento (PLAIN-2850). Na condição sem RAG não há contexto nem fontes, e a rastreabilidade não se aplica. A consequência prática é que o leitor não tem como verificar a resposta: em PLAIN-2850, a resposta sem RAG afirma, com uma justificativa plausível, o contrário do que mostra o documento relevante da coleção.
+A utilidade quase não muda (1,55 para 1,80), e é o critério em que os avaliadores mais divergem. Sem RAG, a LLM sempre responde de forma direta e confiante. Ana julgou se a resposta atende diretamente à pergunta, mesmo quando o conteúdo não corresponde ao contexto, e deu 2 a 9 das 10 respostas sem RAG; Italo descontou as respostas diretas, mas contrárias à evidência, e deu 1 a 8 delas. Com RAG, os dois deram as mesmas notas de utilidade. Lida sozinha, a utilidade pode premiar uma resposta confiante e errada. Em duas consultas ela caiu com o RAG, segundo os dois avaliadores: em PLAIN-2850 nenhum relevante foi recuperado, e a LLM se absteve; em PLAIN-3342 os documentos tratam de coco em geral, e a LLM declarou falta de evidência sobre leite de coco. A instrução de avisar quando não há evidência torna o modelo mais cauteloso, o que aumenta a fidelidade e pode custar utilidade.
 
-São 10 consultas e uma escala de três níveis: as médias indicam tendência, não diferenças estatisticamente estabelecidas. A LLM é um modelo pequeno, e um modelo maior provavelmente responderia melhor sem RAG e combinaria melhor vários documentos com RAG.
+A rastreabilidade média na condição com RAG é 1,90: oito respostas receberam 2 dos dois avaliadores. As divergências são sobre o que conta como fonte identificável. Em PLAIN-2430 a resposta não cita nenhum \cod{doc\_id}, apesar da instrução do prompt, mas menciona o ensaio VITACOG e números dos resumos. Em PLAIN-2470, um dado do MED-1340 aparece atribuído ao MED-1337. Nas duas, Ana deu 2 e Italo, 1. Na condição sem RAG não há contexto nem fontes, e a rastreabilidade não se aplica. A consequência prática é que o leitor não tem como verificar a resposta: em PLAIN-2850, a resposta sem RAG afirma, com uma justificativa plausível, o contrário do que mostra o documento relevante da coleção.
+
+\begin{table}[!htb]
+\centering\small
+\caption{Concordância entre os dois avaliadores. Kappa ponderado de Cohen com pesos quadráticos~\cite{cohen1968}, interpretado pelas faixas de Landis e Koch~\cite{landis1977}. A rastreabilidade só se aplica à condição B.}
+\label{tab:concordancia}
+\begin{tabular}{lccccl}
+\toprule
+Critério & Respostas & Notas iguais & Diferença $\le 1$ & Kappa ponderado & Interpretação \\
+\midrule
+Fidelidade & 20 & 95\% & 100\% & 0,97 & quase perfeita \\
+Completude & 20 & 70\% & 100\% & 0,76 & substancial \\
+Utilidade & 20 & 65\% & 100\% & 0,30 & razoável \\
+Rastreabilidade & 10 & 80\% & 100\% & 0,00 & ver texto \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Concordância.} A Tabela~\ref{tab:concordancia} resume a concordância. Nenhuma divergência foi de 2 pontos. Fidelidade e completude, que se conferem afirmação por afirmação contra os documentos, têm concordância quase perfeita e substancial. Na utilidade, as 7 divergências estão todas na condição sem RAG, pela diferença de interpretação descrita acima. O kappa também é reduzido pela concentração das notas: Ana deu 2 em 17 das 20 respostas, o que eleva a concordância esperada por acaso~\cite{feinstein1990}. Na rastreabilidade, o kappa é 0 apesar de 80\% de notas iguais. Ana deu 2 às dez respostas, e com um avaliador constante a concordância observada é igual à esperada por acaso: o kappa vale 0 por construção.
+
+São 10 consultas e uma escala de três níveis: as médias indicam tendência, não diferenças estatisticamente estabelecidas. Os avaliadores são os próprios autores do sistema. A LLM é um modelo pequeno, e um modelo maior provavelmente responderia melhor sem RAG e combinaria melhor vários documentos com RAG.
 
 \FloatBarrier
 \subsection{Análise de falhas ponta a ponta}
 
-Os três casos foram escolhidos pela diferença entre as somas das notas de fidelidade, completude e utilidade nas duas condições. A Tabela~\ref{tab:estagios} mostra quantos relevantes cada estágio colocou no Top-5.
+Os três casos foram escolhidos pelas notas finais, a partir da diferença $B-A$ entre as somas de fidelidade, completude e utilidade nas duas condições. Nenhuma consulta teve soma menor com RAG, porque a fidelidade subiu em todas. Por isso, o caso em que o RAG não ajudou é o de pior recuperação entre as consultas em que a utilidade caiu (PLAIN-2850, Hit@5 nulo). O de pouca diferença é o de menor $B-A$ (PLAIN-2450, +1), e o de melhora clara é o de maior $B-A$ (PLAIN-270, +4,5, que empata com PLAIN-68 e tem mais relevantes no contexto). A Tabela~\ref{tab:estagios} mostra quantos relevantes cada estágio colocou no Top-5.
 
 \begin{table}[!htb]
 \centering\small
@@ -561,16 +581,16 @@ Os três casos foram escolhidos pela diferença entre as somas das notas de fide
 \toprule
 Caso & Lexical & Semântico & Híbrido & Reranking (contexto) \\
 \midrule
-PLAIN-2470, o RAG melhorou claramente (2 $\rightarrow$ 6) & 2 & 4 & 4 & 3 \\
+PLAIN-270, o RAG melhorou claramente (1,5 $\rightarrow$ 6) & 1 & 1 & 1 & 2 \\
 PLAIN-2450, pouca diferença (4 $\rightarrow$ 5) & 1 & 1 & 1 & 2 \\
-PLAIN-2850, o RAG não ajudou (2 $\rightarrow$ 2) & 0 & 0 & 0 & 0 \\
+PLAIN-2850, o RAG não ajudou (1,5 $\rightarrow$ 4) & 0 & 0 & 0 & 0 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\paragraph{O RAG melhorou claramente: PLAIN-2470, \emph{Is Milk Good for Our Bones?}} Todos os estágios funcionaram. A meta-análise sobre leite e fratura de quadril (MED-1337) é o segundo documento no lexical e o primeiro no semântico, no híbrido e após o reranking, e os três primeiros documentos do contexto são relevantes de grau 2. O reranking trouxe um deles da 12\textsuperscript{a} posição, mas também tirou do Top-5 dois relevantes de grau 1 e pôs no lugar dois documentos que falam de leite em outro contexto. Sem RAG, a LLM dá a resposta convencional (\emph{Yes, milk is good for bones}), que os documentos não sustentam. Com RAG, a resposta se inverte e relata a evidência: não há associação entre consumo de leite e fratura de quadril em mulheres. A ressalva é de atribuição: a resposta cita apenas o MED-1337, mas o dado sobre risco 9\% maior em homens vem do MED-1340 e se refere ao consumo de leite na adolescência.
+\paragraph{O RAG melhorou claramente: PLAIN-270, \emph{Is Caffeinated Tea Really Dehydrating?}} Só um documento do contexto responde à pergunta: o MED-4331, um ensaio randomizado que comparou chá preto e água na manutenção da hidratação. O lexical o deixa na 4\textsuperscript{a} posição: o documento contém \cod{caffein} e \cod{tea}, mas escreve \emph{hydration}, e o stemming de Porter não remove o prefixo, de modo que \cod{hydrat} não casa com \cod{dehydr}, o termo que carrega o assunto da consulta. O primeiro do lexical é um estudo sobre descafeinação e refluxo, que repete \cod{caffein} e \cod{tea}. O semântico reconhece a relação entre \emph{dehydrating} e \emph{hydration} e põe o MED-4331 em 1\textsuperscript{o}. A fusão o deixa em 2\textsuperscript{o}, e o reranking o leva ao 1\textsuperscript{o} lugar, com o maior score do cross-encoder; também traz um segundo relevante da 22\textsuperscript{a} para a 5\textsuperscript{a} posição, e o NDCG@10 sobe de 0,139 para 0,305. Sem RAG, a LLM repete a crença comum de que o chá cafeinado desidrata pelo efeito diurético, justamente a ideia que o MED-4331 testa e refuta (fidelidade e completude 0). Com RAG, a resposta cita o MED-4331, relata as doses de cafeína e a ausência de diferença entre chá e água nas medidas de sangue e urina, e recebe 2 nos quatro critérios dos dois avaliadores. A melhora depende de um único documento, e a resposta não menciona que o estudo tinha só 21 homens saudáveis em repouso.
 
-\paragraph{Pouca diferença: PLAIN-2450, \emph{Are Organic Foods Safer?}} Os cinco documentos do contexto tratam do tema, e o título de um deles é praticamente a própria pergunta. A resposta sem RAG já chegava à conclusão que os documentos sustentam (alimento orgânico não é garantia de segurança). Quando o conhecimento geral do modelo coincide com a literatura, o RAG tem pouco a acrescentar: aqui, acrescentou detalhes e fontes. Também introduziu um erro: a resposta afirma que o produto orgânico tem menor risco de contaminação por \emph{E. coli}, e o MED-1178 diz que esse risco não diferiu. A informação correta estava no contexto, e o erro é da geração.
+\paragraph{Pouca diferença: PLAIN-2450, \emph{Are Organic Foods Safer?}} Os cinco documentos do contexto tratam do tema, e o título de um deles é praticamente a própria pergunta. A resposta sem RAG já chegava à conclusão que os documentos sustentam (alimento orgânico não é garantia de segurança). Quando o conhecimento geral do modelo coincide com a literatura, o RAG tem pouco a acrescentar: aqui, acrescentou detalhes e fontes. Também introduziu um erro: a resposta afirma que o produto orgânico tem menor risco de contaminação por \emph{E. coli}, e o MED-1178 diz que esse risco não diferiu. A informação correta estava no contexto, e o erro é da geração; os dois avaliadores o registraram (fidelidade 1).
 
 \paragraph{O RAG não ajudou: PLAIN-2850, \emph{More Antibiotics In White Meat or Dark Meat?}} A informação necessária não chegou ao contexto (Hit@5 nulo). O documento que responde à pergunta é o MED-4166 (grau 2), que mediu resíduos de um antibiótico no músculo do peito e da coxa de frangos. A Tabela~\ref{tab:falha} acompanha esse documento estágio por estágio.
 
@@ -592,9 +612,43 @@ Geração & -- & Com RAG, a LLM declara que o contexto não permite responder. \
 \end{tabular}
 \end{table}
 
-A falha principal é da recuperação lexical, por descasamento de vocabulário: a consulta diz \emph{white meat} e \emph{dark meat}, e o documento diz \emph{breast} e \emph{thigh}. Além de perder o relevante, o lexical encheu o topo com documentos que usam \cod{meat} e \cod{white} em outro sentido (consumo de carne branca e risco de câncer). O semântico reconhece parte da relação, mas a fusão agrava a situação: com $k=10$, nenhum documento exclusivo do semântico poderia chegar ao Top-5 nesta consulta. O reranking recupera 20 posições e também não liga os dois vocabulários; todos os scores do Top-5 são negativos, sinal de que o próprio cross-encoder não viu nenhum candidato claramente relevante. A geração se comportou como instruído: com RAG, a LLM não inventou e se absteve. Sem RAG, respondeu com segurança que a carne escura tem mais resíduos, e o MED-4166 relata o oposto (concentrações maiores no peito do que na coxa). O RAG não melhorou a resposta, mas trocou uma afirmação errada e impossível de verificar por uma abstenção honesta.
+A falha principal é da recuperação lexical, por descasamento de vocabulário: a consulta diz \emph{white meat} e \emph{dark meat}, e o documento diz \emph{breast} e \emph{thigh}. Além de perder o relevante, o lexical encheu o topo com documentos que usam \cod{meat} e \cod{white} em outro sentido (consumo de carne branca e risco de câncer). O semântico reconhece parte da relação, mas a fusão agrava a situação: com $k=10$, nenhum documento exclusivo do semântico poderia chegar ao Top-5 nesta consulta. O reranking recupera 20 posições e também não liga os dois vocabulários; todos os scores do Top-5 são negativos, sinal de que o próprio cross-encoder não viu nenhum candidato claramente relevante. A geração se comportou como instruído: com RAG, a LLM não inventou e se absteve (fidelidade 2; completude e utilidade 1). Sem RAG, respondeu com segurança que a carne escura tem mais resíduos, e o MED-4166 relata o oposto (concentrações maiores no peito do que na coxa). A soma das notas sobe só pela fidelidade; a utilidade cai, e o usuário continua sem resposta. O RAG trocou uma afirmação errada e impossível de verificar por uma abstenção honesta.
 
-Um segundo tipo de falha aparece em PLAIN-3342: dois dos três relevantes chegaram ao contexto (R@5 de 0,667, o maior do experimento) e a resposta com RAG não foi melhor. Ali a recuperação fez o que os qrels pedem, e o limite está no conteúdo disponível na coleção e na cautela da geração.
+Um segundo tipo de falha aparece em PLAIN-3342: dois dos três relevantes chegaram ao contexto (R@5 de 0,667, o maior do experimento), e mesmo assim a utilidade caiu de 2 para 1, nota dos dois avaliadores. Ali a recuperação fez o que os qrels pedem, e o limite está no conteúdo disponível na coleção e na cautela da geração.
+
+\FloatBarrier
+\subsection{Avaliação humana e pré-avaliação por IA}
+\label{sec:ia-humana}
+
+Durante o desenvolvimento, o Claude (Anthropic) preencheu a mesma planilha com notas e justificativas, antes da avaliação humana, sem acesso a ela e sabendo a condição de cada resposta. Essas notas não entram nas notas finais; aqui são comparadas com as dos dois integrantes. Zheng et al.~\cite{zheng2023} relatam que LLMs fortes, usados como avaliadores, concordam com humanos tanto quanto humanos concordam entre si, em comparações entre pares de respostas. A Tabela~\ref{tab:iahumana} verifica se isso vale para a nossa rubrica, que exige conferir cada afirmação contra os documentos.
+
+\begin{table}[!htb]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Pré-avaliação por IA e avaliação humana. Médias por condição (Humanos: média dos dois avaliadores) e kappa ponderado entre cada par de avaliadores, com a fração de notas iguais entre parênteses.}
+\label{tab:iahumana}
+\begin{tabular}{lccccccc}
+\toprule
+ & \multicolumn{2}{c}{Sem RAG (A)} & \multicolumn{2}{c}{Com RAG (B)} & \multicolumn{3}{c}{Kappa ponderado (notas iguais)} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-8}
+Critério & IA & Humanos & IA & Humanos & IA--Ana & IA--Italo & Ana--Italo \\
+\midrule
+Fidelidade & 0,70 & 0,20 & 1,90 & 1,75 & 0,79 (70\%) & 0,75 (65\%) & 0,97 (95\%) \\
+Completude & 1,00 & 0,40 & 1,50 & 1,60 & 0,57 (60\%) & 0,49 (50\%) & 0,76 (70\%) \\
+Utilidade & 1,20 & 1,55 & 1,60 & 1,80 & 0,33 (55\%) & 0,83 (90\%) & 0,30 (65\%) \\
+Rastreabilidade & N/A & N/A & 1,60 & 1,90 & 0,00 (70\%) & 0,69 (80\%) & 0,00 (80\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\item \textbf{A IA foi mais branda com as respostas sem RAG.} Deu fidelidade 0 a 3 respostas, contra 8 de cada avaliador. Nas seis notas de fidelidade em que ficou fora do intervalo dos dois humanos, ficou acima, e cinco são da condição A. Nessas respostas, uma afirmação coerente com o contexto convive com outra contrária a ele (o chá cafeinado ``pode desidratar'', o probiótico deve ser tomado com água): a IA deu 1 (``parcialmente sustentada''), e os dois avaliadores deram 0, a nota que a rubrica prevê quando uma afirmação importante contradiz o contexto. A completude repete o padrão (1,00 contra 0,40 em A). Pelas notas da IA, o ganho do RAG seria menor: +1,2 de fidelidade e +0,5 de completude, contra +1,55 e +1,2 nas notas humanas.
+\item \textbf{Na utilidade, a IA ficou do lado do Italo.} Coincidiu com ele em 18 das 20 notas e teve a mesma média na condição A (1,20). Como a pré-avaliação foi feita antes da avaliação humana, isso indica que a divergência entre os dois avaliadores não é uma preferência pessoal. Ela vem de uma ambiguidade da rubrica, que não diz se uma resposta direta, mas contrária à evidência, ``responde à necessidade apresentada''.
+\item \textbf{Na rastreabilidade, a IA foi mais rigorosa} (1,60 contra 1,90). Deu 0 à resposta de PLAIN-2430, que não cita nenhum \cod{doc\_id} e só menciona o ensaio VITACOG (Ana 2, Italo 1). Deu 1 à abstenção de PLAIN-2850, que estende a conclusão ao contexto inteiro citando um único documento. A IA exigiu a citação explícita; os humanos aceitaram fontes identificáveis por outros meios.
+\item \textbf{Efeito sobre as conclusões.} O sentido dos resultados é o mesmo: o RAG melhora sobretudo a fidelidade. Já a magnitude muda, e com ela a escolha dos casos: pelas notas da IA, o caso de melhora clara seria PLAIN-2470, e PLAIN-2850 teria diferença $B-A$ nula, em vez de +2,5.
+\end{itemize}
+
+Em resumo, a IA concordou com os humanos tanto quanto eles concordam entre si só na utilidade. Na fidelidade e na completude, que dependem de conferir as afirmações contra os documentos, concordou menos, e sempre na mesma direção: deu crédito parcial a respostas com erros importantes. Como avaliadora única, teria subestimado o efeito do RAG. A comparação tem limites: é uma única execução de um único modelo, não cega à condição, e são 20 respostas.
 
 % ------------------------------- Conclusões --------------------------------
 \FloatBarrier
@@ -606,19 +660,19 @@ Um segundo tipo de falha aparece em PLAIN-3342: dois dos três relevantes chegar
 \item \textbf{Tolerância a erros.} A correção com bigramas, Jaccard e distância de edição recuperou toda a perda nas 8 consultas afetadas pelo erro e acerta 81\% dos erros sintéticos no \cod{dev}. As transposições são o ponto fraco, e o método não distingue um erro de um termo ausente da coleção. Os embeddings são mais robustos ao erro, mas não imunes.
 \item \textbf{Busca semântica.} Tem desempenho global parecido com o do BM25 e acerta consultas diferentes: ganha quando há variação de vocabulário e perde em termos raros e específicos.
 \item \textbf{Busca híbrida.} A fusão por RRF é o componente de melhor custo-benefício: ganho de 8,2\% a 12,1\% de NDCG@10 sobre os sistemas isolados, com custo de tempo desprezível.
-\item \textbf{Reranking.} O ganho é marginal (0,0015 de NDCG@10) e custa cerca de 97\% do tempo do pipeline em CPU. O cross-encoder melhora a primeira posição e as consultas em forma de pergunta, e piora as consultas de uma palavra.
-\item \textbf{RAG.} O contexto recuperado tornou as respostas mais fiéis (0,7 para 1,9) e rastreáveis, mas não é garantia: houve erro de leitura de um documento que estava no contexto, atribuição ao documento errado, abstenção quando a recuperação falhou e uma resposta sem citação.
+\item \textbf{Reranking.} O ganho é marginal (0,0015 de NDCG@10) e custa cerca de 96\% do tempo do pipeline em CPU. O cross-encoder melhora a primeira posição e as consultas em forma de pergunta, e piora as consultas de uma palavra.
+\item \textbf{RAG.} O contexto recuperado tornou as respostas mais fiéis (0,20 para 1,75), mais completas (0,40 para 1,60) e verificáveis pelas fontes; a utilidade quase não mudou, porque sem RAG a LLM também responde de forma direta. O RAG não é garantia: houve erro de leitura de um documento que estava no contexto, atribuição ao documento errado, abstenção quando a recuperação falhou e uma resposta sem citação.
 \item \textbf{Interação entre os componentes.} As falhas se propagam. No caso da PLAIN-2850, o descasamento de vocabulário no lexical tirou o documento relevante do Top-100, a fusão o rebaixou por estar em um único ranking, o reranking o recuperou só em parte, e a LLM ficou sem a informação. As médias não mostram esse encadeamento; ele só aparece quando se acompanha uma consulta de ponta a ponta.
 \end{itemize}
 
-As conclusões valem para uma única coleção, com qrels derivados de links e consultas muito curtas. A avaliação do RAG usa 10 consultas e uma LLM pequena, e os tempos foram medidos em CPU.
+As conclusões valem para uma única coleção, com qrels derivados de links e consultas muito curtas. A avaliação do RAG usa 10 consultas, uma LLM pequena e dois avaliadores que são os autores do sistema, e os tempos foram medidos em CPU.
 
 % ------------------------------- Uso de IA ---------------------------------
 \section{Uso de ferramentas de IA}
 
 \textbf{IA como componente do experimento}, documentada na metodologia: os bi-encoders \cod{all-MiniLM-L6-v2} e \cod{multi-qa-MiniLM-L6-cos-v1}, os cross-encoders \cod{ms-marco-MiniLM-L6-v2} e \cod{ms-marco-TinyBERT-L2-v2}, e a LLM \cod{Qwen2.5-3B-Instruct}.
 
-\textbf{IA como apoio ao desenvolvimento}: Claude (Anthropic), via Claude Code, foi usado na implementação do notebook a partir do enunciado (reaproveitando o pré-processamento e a fórmula do BM25 do TP1), na execução dos experimentos, na conferência dos resultados, na redação das análises, do README e deste relatório, e na pré-avaliação das respostas do RAG. \completar{confirmar que as notas foram revisadas pelos integrantes e indicar outros usos de IA pelo grupo, se houver.}
+\textbf{IA como apoio ao desenvolvimento}: Claude (Anthropic), via Claude Code, foi usado na implementação do notebook a partir do enunciado (reaproveitando o pré-processamento e a fórmula do BM25 do TP1), na execução dos experimentos, na conferência dos resultados, na redação das análises, do README e deste relatório, e na geração de um arquivo com o texto dos documentos do contexto para a leitura dos avaliadores. Durante o desenvolvimento, o Claude também fez uma pré-avaliação das respostas do RAG, que não entra nas notas finais: as notas e a concordância da Seção~\ref{sec:res-rag} vêm apenas das avaliações dos dois integrantes, e a pré-avaliação aparece somente na comparação da Seção~\ref{sec:ia-humana}. \completar{indicar outros usos de IA pelo grupo, se houver.}
 
 Os integrantes são responsáveis por compreender integralmente o código, a metodologia, as decisões e os resultados apresentados.
 
@@ -627,11 +681,17 @@ Os integrantes são responsáveis por compreender integralmente o código, a met
 
 \bibitem{boteva2016} BOTEVA, V.; GHOLIPOUR, D.; SOKOLOV, A.; RIEZLER, S. A Full-Text Learning to Rank Dataset for Medical Information Retrieval. In: \emph{European Conference on Information Retrieval (ECIR)}, 2016.
 
+\bibitem{cohen1968} COHEN, J. Weighted kappa: Nominal scale agreement provision for scaled disagreement or partial credit. \emph{Psychological Bulletin}, v. 70, n. 4, 1968.
+
 \bibitem{cormack2009} CORMACK, G. V.; CLARKE, C. L. A.; BÜTTCHER, S. Reciprocal Rank Fusion outperforms Condorcet and individual Rank Learning Methods. In: \emph{ACM SIGIR}, 2009.
+
+\bibitem{feinstein1990} FEINSTEIN, A. R.; CICCHETTI, D. V. High agreement but low kappa: I. The problems of two paradoxes. \emph{Journal of Clinical Epidemiology}, v. 43, n. 6, 1990.
 
 \bibitem{jarvelin2002} JÄRVELIN, K.; KEKÄLÄINEN, J. Cumulated gain-based evaluation of IR techniques. \emph{ACM Transactions on Information Systems}, v. 20, n. 4, 2002.
 
 \bibitem{jiao2020} JIAO, X. et al. TinyBERT: Distilling BERT for Natural Language Understanding. In: \emph{Findings of EMNLP}, 2020.
+
+\bibitem{landis1977} LANDIS, J. R.; KOCH, G. G. The measurement of observer agreement for categorical data. \emph{Biometrics}, v. 33, n. 1, 1977.
 
 \bibitem{lewis2020} LEWIS, P. et al. Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. In: \emph{NeurIPS}, 2020.
 
@@ -652,6 +712,8 @@ Os integrantes são responsáveis por compreender integralmente o código, a met
 \bibitem{thakur2021} THAKUR, N. et al. BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models. In: \emph{NeurIPS Datasets and Benchmarks}, 2021.
 
 \bibitem{wang2020} WANG, W. et al. MiniLM: Deep Self-Attention Distillation for Task-Agnostic Compression of Pre-Trained Transformers. In: \emph{NeurIPS}, 2020.
+
+\bibitem{zheng2023} ZHENG, L. et al. Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. In: \emph{NeurIPS Datasets and Benchmarks}, 2023.
 
 \end{thebibliography}
 
